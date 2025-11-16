@@ -1,26 +1,55 @@
 # FinalProjects1 – Power BI Project
 
+## 📌 Problem Statement
+
+Organizations often struggle to make data-driven decisions due to scattered datasets, inconsistent formats, and lack of real-time reporting.  
+The goal of this project is to build an **interactive Power BI dashboard** that consolidates data from multiple sources, cleans and transforms it, and presents meaningful insights across:
+
+- Sales performance  
+- Financial metrics  
+- Operational KPIs  
+- Risk / loan default analytics (if applicable)
+
+This project aims to convert raw data into an efficient, visually appealing analytical solution that helps decision-makers understand trends, detect issues, and identify opportunities for improvement.
+
+---
+
 ## 📊 Overview
-**FinalProjects1.pbix** is an end-to-end Power BI project designed to analyze key business metrics, visualize trends, and support data-driven decision-making.
+
+**FinalProjects1.pbix** is an end-to-end Power BI report that includes:
+- A structured data model  
+- Cleaned and transformed datasets  
+- DAX measures for KPIs  
+- Multiple interactive dashboards
 
 ---
 
 ## 📁 Project Contents
+
 | File | Description |
 |------|-------------|
-| **FinalProjects1.pbix** | Main Power BI report file containing dashboards, measures, visuals, and data model |
+| **FinalProjects1.pbix** | Main Power BI report containing dashboards, visuals, DAX measures, and data model |
 
 ---
 
 ## 🧱 Data Model
-This project contains a structured Power BI data model including:
 
-- **Fact tables** (sales, transactions, or project-specific data)
-- **Dimension tables** (date, customer, product, category, etc.)
-- **Star-schema relationships** using:
-  - 1-to-many relationships
-  - Active/inactive relationships where required  
-- Common key fields used for relationships:
+The project is structured following a **Star Schema**, consisting of:
+
+### **Fact Tables**
+- Transaction / Sales / Loan data (depending on the dataset)
+
+### **Dimension Tables**
+- Date  
+- Customer  
+- Product  
+- Category  
+- Region or other categorical fields
+
+### **Relationships**
+- 1-to-many relationships between dimensions and facts  
+- Active/inactive relationships where required  
+- Common key fields:
   - `Date`
   - `CustomerID`
   - `ProductID`
@@ -28,19 +57,25 @@ This project contains a structured Power BI data model including:
 
 ---
 
-## 🛠 Transformations (Power Query)
-Data cleaning and transformation steps include:
+## 🛠 Data Cleaning & Transformation (Power Query)
 
-- Removing duplicates and nulls  
-- Standardizing date formats (`DD/MM/YYYY`, `MM/DD/YYYY`, `YYYY-MM-DD`)  
-- Creating computed/conditional columns  
-- Merging queries to improve the model  
-- Cleaning numeric fields (amount, cost, quantity)
+Transformations done in Power Query include:
+
+- Removing nulls and duplicates  
+- Fixing inconsistent date formats (`DD/MM/YYYY`, `MM/DD/YYYY`, `YYYY-MM-DD`)  
+- Splitting and merging columns  
+- Creating calculated columns  
+- Converting data types  
+- Cleaning numeric fields  
+- Standardizing category names  
+- Removing unnecessary columns  
+- Merging datasets for dimensional modeling  
 
 ---
 
-## 📐 DAX Measures Used
-Some example DAX measures used in this project:
+## 📐 DAX Measures
+
+Some sample DAX measures used in the project:
 
 ```DAX
 Total Sales = SUM(FactSales[SalesAmount])
@@ -55,7 +90,9 @@ DIVIDE(
     COUNTROWS('loan_default')
 )
 
-```
+
+
+
 
 ## 📈 Dashboards / Visuals Included
 
